@@ -45,19 +45,26 @@ if(gamePattern[currentLevel]===userClickedPattern[currentLevel]){
   setTimeout(function(){
     $("body").removeClass("game-over");
   },200);
-   $("#level-title").text("Game Over, Press Any Key to Restart");
+   $("#level-title").text("Game Over, Press Key to Restart or click here");
    startAgain();
 }}
 
 $(document).on("keydown",function(event){
-  console.log("In function");
+//  console.log("In function");
  if(!started){
-   console.log("In if");
+   // console.log("In if");
    nextSequence();
    $("#level-title").text("level "+level);
    started = true;}
 });
-
+$("h1").on("click",function(){
+    console.log("In function");
+   if(!started){
+      console.log("In if");
+     nextSequence();
+     $("#level-title").text("level "+level);
+     started = true;}
+});
 // document.addEventListener("keydown",function(event){
 //   console.log("In function");
 //  if(!started){
